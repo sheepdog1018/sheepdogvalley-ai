@@ -1,0 +1,413 @@
+@keyframes shape-transform {
+    0%, 100% {
+        border-radius: 50% 50% 0 50%;
+        background-color: #7D9B59; /* Pistachio */
+        transform: rotate(0);
+    }
+    20% {
+        border-radius: 10%;
+        background-color: #D1B024; /* Mustard */
+        transform: rotate(72deg);
+    }
+    40% {
+        border-radius: 50%;
+        background-color: #965C3C; /* Brown */
+        transform: rotate(144deg);
+    }
+    60% {
+        border-radius: 5% 20% 5% 20%;
+        background-color: #8B8B56; /* Olive Green */
+        transform: rotate(216deg);
+    }
+    80% {
+        border-radius: 30% 5% 30% 5%;
+        background-color: #B36981; /* Mauve */
+        transform: rotate(288deg);
+    }
+}
+
+@keyframes flicker {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		stroke-width: 0;
+	}
+}
+@keyframes random {
+	15% {
+		background-color: red;
+	}
+	30% {
+		background-color: yellow;
+	}
+	45% {
+		background-color: green;
+	}
+	60% {
+		background-color: orange;
+	}
+	75% {
+		background-color: purple;
+	}
+}
+@keyframes random-border {
+    15% {
+        border-color: #9C5C5C; /* Muted red */
+			border-width: 5px;
+    }
+    30% {
+        border-color: #DAA520; /* Muted gold */
+			border-width: 4px;
+    }
+    45% {
+        border-color: #568B38; /* Muted green */
+			border-width: 3px;
+    }
+    60% {
+        border-color: #DB9F64; /* Muted orange */
+        border-width: 2px;
+    }
+    75% {
+        border-color: #AB7B94; /* Muted purple */
+			border-width: 3px;
+    }
+    100% {
+        border-width: 4px;
+    }
+}
+
+
+@keyframes random-color {
+	15% {
+		color: purple;
+	}
+	30% {
+		color: blue;
+	}
+	45% {
+		color: orange;
+	}
+	60% {
+		color: green;
+	}
+	75% {
+		color: red;
+	}
+}
+body {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #222;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+header {
+	display: block;
+	margin: 0 auto;
+}
+h1 {
+	margin: 0 auto;
+	padding-right: 10px;
+	color: whitesmoke;
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-size: 2em;
+	text-align: right;
+}
+h3 {
+	font-size: 4em;
+}
+div.header-bg {
+	display: flex;
+	margin: 0 auto;
+	width: 100%;
+	height: 45vh;
+	background-image: url("https://i.postimg.cc/t4q2vN8S/artwork.png");
+	background-position: top;
+	background-size: auto;
+	background-repeat: no-repeat;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 30px solid #1a1a1a;
+}
+#arabic {
+	margin: 0 auto;
+	color: whitesmoke;
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-size: 3em;
+	text-align: right;
+}
+h2 {
+	margin: 0 auto;
+	padding: 10px;
+	color: #e82b12;
+	font-family: "Codystar", cursive;
+	font-size: 2em;
+	text-align: right;
+}
+h3 {
+	color: whitesmoke;
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-size: 4em;
+}
+.button-container {
+	text-align: center;
+	background-color: transparent;
+	margin: 0 auto;
+	height: 15vh;
+    flex: 0 0 calc(50% - 2rem);
+	max-width: calc(100% - 2rem);
+}
+
+.see-creations-btn {
+	display: inline-block;
+	background-color: #222;
+	color: whitesmoke;
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-size: 1em;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 12px;
+	border: 5px solid #49754f;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+	-webkit-animation: random-border 1s ease infinite;
+	animation: random-border 1s ease infinite;
+	word-spacing: 10px;
+}
+.button-hint {
+	color: #509279;
+	font-family: Rubik Vinyl, cursive;
+	font-size: 1.7em;
+	padding: 5px;
+	margin: 0;
+}
+.see-creations-btn:hover {
+	background-color: #333;
+	color: #f8f9fa;
+	text-decoration: none;
+}
+
+#art-gallery {
+	background-image: url("https://i.postimg.cc/J0mhdchf/le-VLY6i-Cp9a-Syr-Sffe-XI-2-sg74i-2x.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	gap: 0;
+}
+div.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background: rgba(34, 34, 34, 0.9);
+	align-items: flex-start;
+}
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: whitesmoke;
+  cursor: pointer;
+  user-select: none;
+  z-index: 999;
+}
+.heart.clicked {
+  color: #e82b12;
+}
+div.item-holder {
+    position: relative;
+	flex: 0 0 calc(50% - 2rem);
+	max-width: calc(18% - 2rem);
+	margin: 1rem;
+	border: 5px solid #e82b12;
+	border-radius: 3%;
+	overflow: hidden;
+}
+div.gallery img:hover {
+	opacity: 0.9;
+}
+
+div.gallery img {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+div.desc {
+	margin: 0 auto;
+	padding: 5px 2px;
+	width: 100%;
+	color: whitesmoke;
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-size: 1.3em;
+	text-align: center;
+	border-top: 2px groove #e82b12;
+}
+
+#red {
+	animation: flicker 1s ease alternate infinite;
+}
+#blue {
+	animation: flicker 1s ease alternate infinite;
+	animation-delay: 0.5s;
+}
+#green {
+	animation: flicker 1s ease alternate infinite;
+	animation-delay: 1s;
+}
+#yellow {
+	animation: flicker 1s ease alternate infinite;
+	animation-delay: 0.75s;
+}
+#orange {
+	animation: flicker 1s ease alternate infinite;
+	animation-delay: 0.25s;
+}
+#lights {
+    height: auto;
+	display: block;
+	margin: 0 auto;
+	padding: -5px;
+	background-color: #333;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: no-wrap;
+	font-family: "Rye", cursive;
+	font-size: 2.8em;
+	border-top: 5px solid whitesmoke;
+	border-bottom: 5px solid whitesmoke;
+}
+div.rainbow {
+	width: 100%;
+	height: 25px;
+	background-color: #222;
+	-webkit-animation: random 25s ease infinite;
+	animation: random 25s ease infinite;
+}
+div.header-bottom {
+    width: 100%;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.header-bottom:before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: #9C5C5C;
+    position: absolute;
+    animation: shape-transform 10s ease-in-out infinite;
+}
+div.sec-head {
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	height: 257px;
+	background-image: url("https://assets.codepen.io/3749364/paintspatter.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	justify-content: center;
+	align-items: center;
+}
+.art {
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-size: 4em;
+	text-align: center;
+	-webkit-text-stroke: 1px whitesmoke;
+	animation: random-color 30s ease infinite;
+}
+.free-use {
+	margin: 0 auto;
+	margin-top: 6rem;
+	font-size: 1.5em;
+	padding-right: 10px;
+	color: whitesmoke;
+    text-align: center;
+}
+footer {
+    margin: 0 auto;
+	padding: 5px;
+	text-align: center;
+    flex: 0 0 calc(50% - 2rem);
+	max-width: calc(100% - 2rem);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+	h1,
+	h2,
+	h3 {
+		font-size: 3.7em;
+	}
+
+	#arabic {
+		font-size: 2.6em;
+	}
+	div.item-holder {
+		max-width: calc(22% - 2rem);
+	}
+	.art {
+	font-size: 3.7em;
+}
+
+@media (max-width: 992px) {
+	h1,
+	h2,
+	h3 {
+		font-size: 3.3em;
+	}
+
+	#arabic {
+		font-size: 2.4em;
+	}
+	div.item-holder {
+		max-width: calc(31% - 2rem);
+	}
+	.art {
+	font-size: 3.3em;
+}
+}
+
+@media (max-width: 768px) {
+	h1,
+	h2,
+	h3 {
+		font-size: 3em;
+	}
+
+	#arabic {
+		font-size: 2.2em;
+	}
+	div.item-holder {
+		max-width: calc(46% - 2rem);
+	}
+	.art {
+	font-size: 3em;
+}
+}
+
+@media (max-width: 576px) {
+	h1,
+	h2,
+	h3 {
+		font-size: 2em;
+	}
+
+	#arabic {
+		font-size: 2.3em;
+	}
+	.art {
+	font-size: 2.5em;
+}
+}
